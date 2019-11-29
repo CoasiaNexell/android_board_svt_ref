@@ -72,7 +72,7 @@ DTB_IMG=${KERNEL_DIR}/arch/arm/boot/dts/s5p4418-svt_ref-rev00.dtb
 CROSS_COMPILE="arm-eabi-"
 
 if [ "${BUILD_ALL}" == "true" ] || [ "${BUILD_BL1}" == "true" ]; then
-	build_bl1_s5p4418 ${BL1_DIR}/bl1-${TARGET_SOC} s5p4418 svt_ref 0
+	build_bl1_s5p4418 ${BL1_DIR}/bl1-${TARGET_SOC} s5p4418 svt 0
 fi
 
 if [ "${BUILD_ALL}" == "true" ] || [ "${BUILD_UBOOT}" == "true" ]; then
@@ -282,7 +282,7 @@ post_process ${TARGET_SOC} \
     ${KERNEL_DIR}/arch/arm/boot \
     ${KERNEL_DIR}/arch/arm/boot/dts \
     ${OUT_DIR} \
-    svt_ref
+    svt
 
 cp -f ${TOP}/device/nexell/svt_ref/boot_by_usb.sh ${RESULT_DIR}
 
