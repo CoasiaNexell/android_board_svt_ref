@@ -22,7 +22,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	device/nexell/svt_ref/init.svt_ref.usb.rc:root/init.svt_ref.usb.rc \
-	device/nexell/svt_ref/ueventd.svt_ref.rc:root/ueventd.svt_ref.rc
+	device/nexell/svt_ref/ueventd.svt_ref.rc:root/ueventd.svt_ref.rc \
+	device/nexell/svt_ref/busybox:system/bin/busybox \
+	device/nexell/svt_ref/hwreg_cmd:system/bin/hwreg_cmd \
+	device/nexell/svt_ref/memtester:system/bin/memtester \
+	device/nexell/svt_ref/modetest:system/bin/modetest
 
 PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

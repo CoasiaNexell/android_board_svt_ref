@@ -230,9 +230,9 @@ function build_bl1()
 		make clean
 	fi
 	if [ "${QUICKBOOT}" == "true" ]; then
-		make BOARD="${board}" KERNEL_VER="4" SYSLOG="n" DEVICE_PORT="${boot_device_port}" BOOT_DEVICE="${boot_device_name}" SECURE_ON=1 QUICKBOOT=1
+		make BOARD="${board}" KERNEL_VER="4" SYSLOG="y" DEVICE_PORT="${boot_device_port}" BOOT_DEVICE="${boot_device_name}" SECURE_ON=1 QUICKBOOT=1
 	else
-		make BOARD="${board}" KERNEL_VER="4" SYSLOG="n" DEVICE_PORT="${boot_device_port}" BOOT_DEVICE="${boot_device_name}" SECURE_ON=1
+		make BOARD="${board}" KERNEL_VER="4" SYSLOG="y" DEVICE_PORT="${boot_device_port}" BOOT_DEVICE="${boot_device_name}" SECURE_ON=1
 	fi
 	popd
 
@@ -262,13 +262,13 @@ function build_bl1_s5p4418()
 	pushd `pwd`
 	cd ${src}
 	make clean
-	make CHIPNAME="${chip}" BOARD="${board}" KERNEL_VER="4" SYSLOG="n" DEVICE_PORT="${boot_device_port}" SUPPORT_USB_BOOT="y" SUPPORT_SDMMC_BOOT="n"
+	make CHIPNAME="${chip}" BOARD="${board}" KERNEL_VER="4" SYSLOG="y" DEVICE_PORT="${boot_device_port}" SUPPORT_USB_BOOT="y" SUPPORT_SDMMC_BOOT="n"
 	cp ./out/bl1-${board}.bin ./bl1-${board}-usb.bin
 	make clean
 	if [ "${QUICKBOOT}" == "true" ]; then
-		make CHIPNAME="${chip}" BOARD="${board}" KERNEL_VER="4" SYSLOG="n" DEVICE_PORT="${boot_device_port}" SUPPORT_USB_BOOT="n" SUPPORT_SDMMC_BOOT="y" QUICKBOOT=1
+		make CHIPNAME="${chip}" BOARD="${board}" KERNEL_VER="4" SYSLOG="y" DEVICE_PORT="${boot_device_port}" SUPPORT_USB_BOOT="n" SUPPORT_SDMMC_BOOT="y" QUICKBOOT=1
 	else
-		make CHIPNAME="${chip}" BOARD="${board}" KERNEL_VER="4" SYSLOG="n" DEVICE_PORT="${boot_device_port}" SUPPORT_USB_BOOT="n" SUPPORT_SDMMC_BOOT="y"
+		make CHIPNAME="${chip}" BOARD="${board}" KERNEL_VER="4" SYSLOG="y" DEVICE_PORT="${boot_device_port}" SUPPORT_USB_BOOT="n" SUPPORT_SDMMC_BOOT="y"
 	fi
 
 	popd
